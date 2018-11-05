@@ -1,0 +1,43 @@
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+    -o-transform: $transforms;
+   -ms-transform: $transforms;
+-webkit-transform: $transforms;
+       transform: $transforms;
+}
+// rotateY
+@mixin rotateY ($deg) {
+@include transform(rotateY(#{$deg}));
+}
+
+//generic transitions
+@mixin transition($transition...) {
+ -moz-transition:    $transition;
+ -o-transition:      $transition;
+ -webkit-transition: $transition;
+ transition:         $transition;
+}
+
+// Generic border-radius
+@mixin border-radius($radius) {
+-webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+   -ms-border-radius: $radius;
+       border-radius: $radius;
+}
+
+//Generic box-shadow
+//Uses:
+//@include box-shadow(1px, 1px, 3px, null, null, inset);, @include box-shadow(1px, 1px, 3px, 4px, brown);, @include box-shadow(1px, 1px, 3px, 4px, brown, inset);
+@mixin box-shadow($left: 1px, $top: 1px, $blur: 3px, $spread: 0px, $color: null, $inset: false){
+@if $inset{
+ -webkit-box-shadow:inset $left $top $blur $spread $color;
+ -moz-box-shadow:inset $left $top $blur $spread $color;
+ box-shadow:inset $left $top $blur $spread $color;
+} @else{
+ -webkit-box-shadow: $left $top $blur $spread $color;
+ -moz-box-shadow: $left $top $blur $spread $color;
+ box-shadow: $left $top $blur $spread $color;
+}
+}

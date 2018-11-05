@@ -1,0 +1,86 @@
+<h2 mat-dialog-title>Create new link item</h2>
+
+<mat-dialog-content>
+
+  <div>
+    <form class="flex-row" [formGroup]="linksForm" class="flex-row" onSubmit="submit()">
+      <mat-form-field class="input-container">
+        <input matInput placeholder="Title" autofocus autocomplete="off" formControlName="title" required minlength="3" maxlength="65" /><!-- input field hint -->
+        <mat-hint align="end"  *ngIf="ctrls.title.dirty">
+          {{ctrls.title.value.length}} of 65 characters
+        </mat-hint>
+        <mat-hint align="start" *ngIf="ctrls.title.dirty && ctrls.title.errors">
+            <div *ngIf="ctrls.title.errors.minlength" class="error-msg">At least 3 characters</div>
+            <div *ngIf="ctrls.title.errors.required" class="error-msg">Title is required</div>
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field class="input-container">
+        <input matInput placeholder="Description" formControlName="description" required maxlength="100"  autocomplete="off" />
+        <mat-hint *ngIf="ctrls.description.dirty" align="end">
+          {{ctrls.description.value.length}} of 100 characters
+        </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="input-container">
+        <input matInput placeholder="Url" formControlName="path" required maxlength="255"  autocomplete="off"/>
+        <mat-hint align="end"  *ngIf="ctrls.path.dirty">
+          {{ctrls.path.value.length}} of 255 characters
+        </mat-hint>
+      </mat-form-field>
+
+
+      <mat-form-field class="input-container">
+        <input type="text" placeholder="Icon" role="combobox" aria-label="Number" matInput  formControlName="icon" [matAutocomplete]="codePointsAutoComplete">
+        <mat-hint align="end" >
+          Start typing
+        </mat-hint>
+
+        <mat-autocomplete #codePointsAutoComplete="matAutocomplete">
+          <mat-option *ngFor="let option of codepointsObservable | async" [value]="option[0]">
+              <i class="material-icons">{{option[0]}}</i> {{option[0]}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="input-container">
+        <input matInput placeholder="Icon Url" formControlName="iconUrl" maxlength="255" autocomplete="off" />
+        <mat-hint *ngIf="ctrls.iconUrl.dirty" align="end">
+          {{ctrls.iconUrl.value.length}} of 255 characters
+        </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="input-container">
+        <input matInput placeholder="Show at" formControlName="showAt" />
+      </mat-form-field>
+
+      <mat-form-field class="input-container">
+        <input matInput placeholder="Order" type="number" formControlName="order" />
+      </mat-form-field>
+
+      <div class="input-container checkbox-wrap">
+        <mat-checkbox title="Should this link item be expanded by default(for menu links)?" formControlName="expanded"> Expanded?</mat-checkbox>
+      </div>
+
+    </form>
+  </div>
+  <p><button mat-icon-button><i class="material-icons">info</i></button> saving refresh your page for your new link to be seen</p>
+
+  <!--<app-alert>This is an alert!</app-alert>-->
+</mat-dialog-content>
+
+<mat-dialog-actions [hidden]="isLoading">
+  <button mat-raised-button [mat-dialog-close]="true" color="warn">Cancel(Esc)</button>
+
+  <button mat-raised-button type="button" color="primary" [disabled]="linksForm.invalid" [title]="linksForm.invalid ? 'All fields must be valid' : 'Submit form'"
+    (click)="submit()">
+    <mat-icon aria-label="Add todo icon">
+      <i class="material-icons rotate-minus-30">send</i>
+    </mat-icon>
+    Submit
+  </button>
+</mat-dialog-actions>
+
+<!-- TODO:
+x. Add input hints to all fields.
+x. Add validations do fields
+-->

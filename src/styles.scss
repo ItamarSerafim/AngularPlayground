@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+body{
+  height: 100vh;
+  overflow-y: scroll;
+  margin: 0;
+}
+/*
+.portrait .main-header {
+  zoom: 80%;
+}
+.portrait .main-header .header-title {
+}*/
+.padding1em {
+  padding: 1em;
+}
+.app-padding {
+  padding: .5em;
+}
+.padding5{
+  padding: 5px;
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex{
+  flex:1;
+}
+
+.no-shadow {
+  box-shadow: none!important;
+}
+
+mat-icon>img.material-icons {
+  width: 24px;
+  height: 24px;
+  margin-top: -14px;
+  margin-left: -5px;
+}
+
+/* It's a fix for theme pink-bluegrey.css I'm using in this project*/
+.mat-progress-bar-buffer {
+  background-color: #ee5388;
+}
+
+@media (min-width: 569px){
+  .app-padding{
+     padding: 1em;
+  }
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  cursor:pointer;
+  display:block;
+  width:8px;
+  color: #333;
+  text-align:center;
+  position:relative;
+}
+.has-error{
+  color: #f44336;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }

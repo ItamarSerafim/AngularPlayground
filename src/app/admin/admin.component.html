@@ -1,0 +1,24 @@
+<h2>Site Administration</h2>
+<p style="color: red">Under construction</p>
+<div class="flex-row">
+    <mat-progress-bar [bufferValue]="75" *ngIf="linksAreLoading"  [value]="38" mode="indeterminate"></mat-progress-bar>
+
+  <div class="tile" *ngFor="let link of links">
+    <a class="flex-col tile-anchor" [routerLink]="link.path" >
+      <img class="tile-img" [src]="link.iconUrl" alt="site-navigation-img" />
+      <p class="title-descr">
+        {{link.title}}
+      </p>
+    </a>
+  </div>
+
+<a routerLink="site-navigation">site-navigation</a>
+</div>
+<h2 _ngcontent-c9="" style="
+    color: #f7dcbf;
+    background-color: #f7dcbf;
+    padding: 15px;
+    color: #F44336;
+    border-radius: 5px;
+    text-align: center;
+"><i class="material-icons">warning</i> TODO: Take these links to the side menu, under "Site Administration" menu item</h2>
