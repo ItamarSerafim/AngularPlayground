@@ -11,10 +11,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApiInterceptor } from './core/interceptors/api-interceptor';
 import { fakeBackendProvider } from './core/interceptors/FakeBackendInterceptor';
 import { SideMenuModule } from './components/side-menu/side-menu.module';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, HomeComponent
 ],
   imports: [
     CommonModule,

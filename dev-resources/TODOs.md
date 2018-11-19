@@ -12,5 +12,6 @@ x. Stylize icon column in list-menus.component:
   max-width: 25px;
   max-height: 25px;
 
-x. WHen canceling a dialog the grid is being refresh. It is not necessary if the action was canceled.
+x. In list-menus.component when canceling a dialog the grid is being refresh. It is not necessary if the action was canceled.
+x. Continue with modules mapping: https://coggle.it/diagram/W_I9BYFGxBtRcRfQ/t/-
 
