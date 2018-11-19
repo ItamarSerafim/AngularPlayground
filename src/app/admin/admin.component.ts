@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadSeedDataService } from '../seed-data/load-seed-data.service';
-import { LinkService } from '../core/site-navigation/link.service';
+import { LinkService, Link } from '../core/site-navigation/link.service';
 import { HttpParams } from '@angular/common/http';
-import { Link } from '../core/backend/apis/links/index';
 
 @Component({
   selector: 'app-admin',
