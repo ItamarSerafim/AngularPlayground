@@ -1,0 +1,17 @@
+Great cheatsheets:
+  https://www.cheatography.com/#
+
+Last tutorial at:
+  https://angular.io/tutorial/toh-pt4
+
+Angular 2+ Flex layout:
+  https://tburleson-layouts-demos.firebaseapp.com/#/docs
+
+Sobre performance de testes:
+  https://medium.com/@michael.silva/aumentando-a-velocidade-dos-testes-com-karma-e-angular-72a665592b58
+
+
+// ==========================================================
+
+TODO:
+x. Create Custom validators for form validations

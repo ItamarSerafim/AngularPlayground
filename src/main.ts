@@ -14,10 +14,6 @@ if (environment.production) {
 
 const loadSeedDataService = new LoadSeedDataService(new DexieService());
 
-loadSeedDataService.createSeedData().then(resp => {
-  platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .then(() => loadSeedDataService.createSeedData())
   .catch(err => console.log('Error building application:\t', err));
-}).catch(ex => {
-  platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log('Error building application:\t', err));
-});
