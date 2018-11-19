@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApiInterceptor } from './core/interceptors/api-interceptor';
 import { fakeBackendProvider } from './core/interceptors/FakeBackendInterceptor';
+import { SideMenuModule } from './components/side-menu/side-menu.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { fakeBackendProvider } from './core/interceptors/FakeBackendInterceptor'
     HttpClientModule,
     AppRoutingModule,
     AngularMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SideMenuModule
   ],
   providers: [
     {
