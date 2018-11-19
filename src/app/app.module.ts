@@ -12,6 +12,7 @@ import { ApiInterceptor } from './core/interceptors/api-interceptor';
 import { fakeBackendProvider } from './core/interceptors/FakeBackendInterceptor';
 import { SideMenuModule } from './components/side-menu/side-menu.module';
 import { HomeComponent } from './components/home/home.component';
+import { SlideshowModule } from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeComponent } from './components/home/home.component';
     AppRoutingModule,
     AngularMaterialModule,
     BrowserAnimationsModule,
-    SideMenuModule
+    SideMenuModule,
+    SlideshowModule
   ],
   providers: [
     {
