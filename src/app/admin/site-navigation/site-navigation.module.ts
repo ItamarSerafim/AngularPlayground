@@ -22,11 +22,11 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ListMenusComponent } from './list-menus/list-menus.component';
 import { CreateLinkComponent } from './create-link/create-link.component';
 import { UpdateMenusComponent } from './update-menus/update-menus.component';
-import { HttpClientModule } from '@angular/common/http';
 import { LinkService } from '../../core/site-navigation/link.service';
 import { Routes, RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material';
 import { AngularMaterialModule } from '../../angular-material.module';
+import { fakeBackendProvider } from '../../core/interceptors/FakeBackendInterceptor';
 
 const routes: Routes = [
   {
@@ -38,7 +38,6 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     ReactiveFormsModule,
     AngularMaterialModule,
     RouterModule.forChild(routes)
@@ -54,7 +53,8 @@ const routes: Routes = [
     LinkService,
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
     { provide: MatDialogRef, useValue: {} },
-    { provide: MAT_DIALOG_DATA, useValue: [] }
+    { provide: MAT_DIALOG_DATA, useValue: [] },
+    fakeBackendProvider
   ],
   entryComponents: [CreateLinkComponent, UpdateMenusComponent]
 })
