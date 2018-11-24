@@ -11,7 +11,11 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.imageUrlArray = ['../../../assets/images/app-schema.png'];
+    this.imageUrlArray = [
+      '../../../assets/images/app-schema.png',
+      '../../../assets/images/admin-page.png',
+      '../../../assets/images/data-management-page.png'
+    ];
     // '7,9,10,15,25,32,45,48,49,57,62,66,72,73,78,79,88,90,96'.split(',')
     //   .map(str => '../../../assets/images/users/' + str + '.jpg');
   }

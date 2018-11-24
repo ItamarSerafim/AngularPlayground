@@ -25,10 +25,10 @@ const routes: Routes = [
   //   path: 'user-management',
   //   component: UserComponent
   // },
-  // {
-  //   path: 'data-management',
-  //   component: DataManagementComponent
-  // },
+  {
+    path: 'data-management',
+    loadChildren: './data-management/data-management.module#DataManagementModule'
+  },
   // {
   //   path: 'admin/api-management',
   //   component: ApiManagementComponent

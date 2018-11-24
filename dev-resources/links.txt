@@ -10,6 +10,8 @@ Angular 2+ Flex layout:
 Sobre performance de testes:
   https://medium.com/@michael.silva/aumentando-a-velocidade-dos-testes-com-karma-e-angular-72a665592b58
 
+NG-SIMPLE-SLIDESHOW:
+https://www.npmjs.com/package/ng-simple-slideshow
 
 // ==========================================================
 
