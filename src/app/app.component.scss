@@ -18,9 +18,15 @@
   .side-nav-trigger{
     margin-right: 0;
   }
-  .logo{
+  .logo-link{
     max-width: 50px;
-    margin-right: 5px;
+    display: flex;
+    .logo{
+      max-width: 50px;
+      max-height: 50px;
+      margin-right: 5px;
+
+    }
   }
   .header-title {
     overflow-x: hidden;
@@ -56,4 +62,11 @@ mat-sidenav-content.main{
   top: 3px;
   @include box-shadow(1px, 1px, 2px, null, #000);
   border: solid 1px;
+}
+
+@media screen and (max-width: 415px){
+  .header-title{
+    display: none;
+  }
+
 }

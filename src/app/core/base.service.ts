@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 /**@class BaseService
- * Exetend your services
+ * Extend your services
  */
 export class BaseService {
   apiUrl = environment.apiUrl;
