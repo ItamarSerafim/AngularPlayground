@@ -25,16 +25,17 @@ export class CreateLinkComponent implements OnInit {
 
   ngOnInit() {
     if (this.data && this.data.command === 'duplicate') { // FIXME: Create an enum for commands names.
+      const item = this.data.item;
       this.linksForm = this.fb.group({
-        title: [this.data.item.title, Validators.required],
-        description: [this.data.item.description || ''],
-        path: [this.data.item.path || '', Validators.required],
-        disable:  [this.data.item.disable || ''],
-        expanded:  [this.data.item.expanded || ''],
-        icon:  [this.data.item.icon || ''],
-        iconUrl: [this.data.item.iconUrl],
-        showAt: [this.data.item.showAt || ''],
-        order: [this.data.item.order || '' /*order is never zero*/, Validators.min(1)]
+        title: [item.title, Validators.required],
+        description: [item.description || ''],
+        path: [item.path || '', Validators.required],
+        disable:  [item.disable || ''],
+        expanded:  [item.expanded || ''],
+        icon:  [item.icon || ''],
+        iconUrl: [item.iconUrl],
+        showAt: [item.showAt || ''],
+        order: [item.order || '' /*order is never zero*/, Validators.min(1)]
       } );
     } else {
       this.linksForm = this.fb.group({
@@ -102,5 +103,5 @@ export class CreateLinkComponent implements OnInit {
   }
 
     // convenience getter for easy access to form fields
-    get ctrls() { console.log(this.linksForm.controls); return this.linksForm.controls; }
+    get ctrls() { return this.linksForm.controls; }
 }
