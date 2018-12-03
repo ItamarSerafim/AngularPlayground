@@ -2,18 +2,21 @@ import {
   Component,
   AfterContentInit,
   ElementRef,
-  ViewChild
+  ViewChild,
+  VERSION
 } from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Link } from './core/site-navigation/link.service';
+import { Link, LinkService } from './core/site-navigation/link.service';
+import { Router, Event, NavigationEnd } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterContentInit {
+export class AppComponent implements AfterContentInit, OnInit {
   title = 'Learning Angular by Example.';
   events: string[] = [];
   opened = true;
@@ -23,13 +26,41 @@ export class AppComponent implements AfterContentInit {
     labels: { hidden: false },
     mode: 'side'
   };
+  ngVersion = VERSION.full ;
   fixedToTop: boolean;
+  sideNavLinks: Link[];
+
   @ViewChild('sidenav')
   public sidenav: MatSidenav;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router,
+    private linkService: LinkService
+  ) {
+    router.events.subscribe( (event: Event) => {
+
+      if (event instanceof NavigationEnd) {
+          if (this.sidenav.mode === 'over') {
+            this.sidenav.close();
+          }
+      }
+
+  });
+  }
+
+  ngOnInit() {
+
+    this.linkService
+      .get({params: {sort: 'order,asc', filter: 'showAt eq side-menu'}})
+      .subscribe((links: Link[]) => {
+        this.sideNavLinks = links;
+      },
+      error => console.log(error));
+  }
 
   ngAfterContentInit() {
+
     this.breakpointObserver.observe([
       '(max-width:  599px)',
       '(min-width: 1024px)',
@@ -92,4 +123,5 @@ export class AppComponent implements AfterContentInit {
       this.sidenav.open();
     });
   }
+
 }

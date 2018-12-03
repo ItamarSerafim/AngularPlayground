@@ -21,10 +21,10 @@ Run the commands: npm install, npm start. Refresh you page for links and menus t
 
 ## Screenshots
 
-<img width="768" src="dev-resources/localhost_4004_admin(iPad) (2).png">
-<img width="320" src="dev-resources/localhost_4004_admin(iPhone 5_SE).png">
-<img width="768" src="dev-resources/localhost_4004_admin_site-navigation(iPad) (7).png">
-<img width="768" src="dev-resources/localhost_4004_admin(iPad) (1).png">
+<img width="768" src="src/assets/images/home-slide-show/edit-link-ipad.png">
+<img width="320" src="src/assets/images/home-slide-show/localhost_4204_admin_site-navigation(iPhone 5_SE).png">
+<img width="768" src="src/assets/images/home-slide-show/localhost_4204_admin_site-navigation-grid(iPad).png">
+<img width="768" src="src/assets/images/home-slide-show/localhost_4204_admin_site-navigation(Laptop with touch).png">
 
 ##### Link para a Dexie: (https://raw.githubusercontent.com/dfahlander/Dexie.js/master/samples/angular2/src/app/todos.service.ts)
 #### [Mardown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)

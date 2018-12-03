@@ -17,12 +17,6 @@ export class SideMenuComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.linkService
-      .get({params: {sort: 'order,asc', filter: 'showAt eq side-menu'}})
-      .subscribe((links: Link[]) => {
-        this.links = links;
-      },
-      error => console.log(error));
 
     // TODO: implement save to server
     // if (this.menuItems.length <= 0) {

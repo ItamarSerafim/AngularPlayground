@@ -5,6 +5,7 @@
 }
 
 .main-header{
+  max-height: 56px;
   padding-right: 0;
   padding-left: 0px;
   &.sticky {
@@ -36,8 +37,21 @@
   }
 }
 
-mat-sidenav-content.main{
-  min-height: calc(100vh - 160px);
+.main-footer{
+  display: flex;
+  justify-content: center;
+}
+mat-sidenav-content.main {
+  min-height: calc(100vh - 128px);
+}
+/* and (min-width: 860px)*/
+@media screen and (min-height: 860px){
+  mat-sidenav-content.main{
+    min-height: calc(100vh - 156px);
+  }
+  .main-header{
+    max-height: 60px;
+  }
 }
 .side-nav-container {
   max-width: 250px;

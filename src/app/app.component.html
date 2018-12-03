@@ -3,8 +3,9 @@
     <i class="material-icons">menu</i>
   </button>
   <a routerLink="home" class="flex logo-link" ><img alt="logo" class="logo" src="../assets/images/logo.png"></a>
+  <h3 class="header-title flex">Angular{{ngVersion}} with Angular Material playground</h3>
+
   <span class="spacer"></span>
-  <h3 class="header-title flex">Angular7 with Angular Material playground</h3>
 
   <button mat-icon-button>
       <i class="material-icons">notifications</i>
@@ -33,7 +34,7 @@
       <i class="material-icons">text_format</i>
     </button>
   </div>
-  <app-side-menu [config]="sideNavConfig"></app-side-menu>
+  <app-side-menu [links]="sideNavLinks" [config]="sideNavConfig"></app-side-menu>
 
 </mat-sidenav>
 
@@ -60,6 +61,6 @@
 
 </mat-sidenav-container>
 
-<mat-toolbar color="accent" role="footer">
+<mat-toolbar color="accent" role="footer" class="main-footer">
 <h3>Powered by Angular Material</h3>
 </mat-toolbar>

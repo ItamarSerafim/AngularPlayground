@@ -21,10 +21,6 @@ const routes: Routes = [
     path: 'site-navigation',
     loadChildren: './site-navigation/site-navigation.module#SiteNavigationModule'
   },
-  // {
-  //   path: 'user-management',
-  //   component: UserComponent
-  // },
   {
     path: 'data-management',
     loadChildren: './data-management/data-management.module#DataManagementModule'
