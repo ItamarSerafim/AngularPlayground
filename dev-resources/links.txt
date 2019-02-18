@@ -13,6 +13,9 @@ Sobre performance de testes:
 NG-SIMPLE-SLIDESHOW:
 https://www.npmjs.com/package/ng-simple-slideshow
 
+Coggle do projeto:
+https://embed.coggle.it/diagram/W_I9BYFGxBtRcRfQ/t/app/be447acf569cbcbd261284247824f7e455662991575e06b7d90f7564b6c70eb7
+
 // ==========================================================
 
 TODO:

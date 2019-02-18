@@ -13,10 +13,14 @@ import { fakeBackendProvider } from './core/interceptors/FakeBackendInterceptor'
 import { SideMenuModule } from './components/side-menu/side-menu.module';
 import { HomeComponent } from './components/home/home.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './components/register/register.component';
+import { SimpleAlertErrorComponent } from './shared/alerts/simple-alert-error/simple-alert-error.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent
+    AppComponent, HomeComponent, LoginComponent, RegisterComponent, SimpleAlertErrorComponent
 ],
   imports: [
     CommonModule,
@@ -24,6 +28,7 @@ import { SlideshowModule } from 'ng-simple-slideshow';
     HttpClientModule,
     AppRoutingModule,
     AngularMaterialModule,
+    FormsModule,
     BrowserAnimationsModule,
     SideMenuModule,
     SlideshowModule
@@ -36,6 +41,7 @@ import { SlideshowModule } from 'ng-simple-slideshow';
     },
     fakeBackendProvider
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SimpleAlertErrorComponent]
 })
 export class AppModule { }

@@ -8,8 +8,9 @@ import {
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Link, LinkService } from './core/site-navigation/link.service';
-import { Router, Event, NavigationEnd } from '@angular/router';
+import { Router, Event, NavigationEnd, RouterOutlet } from '@angular/router';
 import { OnInit } from '@angular/core';
+import { SessionService } from './core/session.service';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,8 @@ export class AppComponent implements AfterContentInit, OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private router: Router,
-    private linkService: LinkService
+    private linkService: LinkService,
+    public sessionService: SessionService
   ) {
     router.events.subscribe( (event: Event) => {
 
@@ -123,5 +125,4 @@ export class AppComponent implements AfterContentInit, OnInit {
       this.sidenav.open();
     });
   }
-
 }

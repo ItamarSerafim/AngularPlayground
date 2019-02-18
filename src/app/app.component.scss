@@ -78,6 +78,25 @@ mat-sidenav-content.main {
   border: solid 1px;
 }
 
+.header-right-group {
+  > button { margin: auto 5px;}
+  .btn-vert {
+    background-color: #b01f58;
+    box-shadow: 1px 1px 1px #00000030;
+    margin-right: 14px;
+  }
+}
+
+.btn-login{
+  .lock {
+    font-size: 14px;
+    color: #9E9E9E;
+    position: absolute;
+    margin-left: -5px;
+    margin-top: 4px;
+  }
+}
+
 @media screen and (max-width: 415px){
   .header-title{
     display: none;

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
@@ -6,10 +6,11 @@ import { BreakpointObserver } from '@angular/cdk/layout';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewChecked {
   @ViewChild('slideshow') slideshow: any;
   imageUrlArray: Array<string>;
   slideShowMinHeight = '535px';
+  animateMe = false;
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit() {
@@ -32,10 +33,19 @@ export class HomeComponent implements OnInit {
       '../../../assets/images/app-schema.png',
       '../../../assets/images/admin-page.png',
       '../../../assets/images/data-management-page.png',
-      '../../../assets/images/home-slide-show/edit-link-ipad.png'
+      '../../../assets/images/home-slide-show/edit-link-ipad.png',
+      '../../../assets/images/home-slide-show/site-navigation_iPhone_5_SE.png',
+      '../../../assets/images/home-slide-show/register_iPhone_6_7_8.png',
+      '../../../assets/images/home-slide-show/login_iPhone_6_7_8.png'
     ];
     // '7,9,10,15,25,32,45,48,49,57,62,66,72,73,78,79,88,90,96'.split(',')
     //   .map(str => '../../../assets/images/users/' + str + '.jpg');
+  }
+
+  ngAfterViewChecked(): void {
+    setTimeout(() => {
+      this.animateMe = true;
+    }, 300);
   }
 
 }

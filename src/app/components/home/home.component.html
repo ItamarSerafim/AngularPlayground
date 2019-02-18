@@ -1,26 +1,23 @@
-
-<!--
-  <img src="../../../assets/images/app-schema.png">
-  <iframe width='1053' height='680' src='https://embed.coggle.it/diagram/W_I9BYFGxBtRcRfQ/be447acf569cbcbd261284247824f7e455662991575e06b7d90f7564b6c70eb7' frameborder='0' allowfullscreen></iframe>
--->
-<section>
-  <!--
-    https://www.npmjs.com/package/ng-simple-slideshow
-<slideshow [height]="height"
-           [minHeight]="'525px'"
-           [autoPlay]="true"
-           [showArrows]="false"
-           [imageUrls]="imageSources"
-           [lazyLoad]="imageSources?.length > 1"
-           [autoPlayWaitForLazyLoad]="true">
-</slideshow>
-  -->
-    <slideshow
-      [imageUrls]="imageUrlArray"
-      [minHeight]="slideShowMinHeight"
-      [autoPlay]="true"
-      [showArrows]="true"
-      [backgroundSize]="'contain'"
-      [showDots]="true"
-      #slideshow></slideshow>
-</section>
+<div class="component-wrap" [ngClass]="{ animateme: animateMe }">
+  <section>
+    <!--
+      https://www.npmjs.com/package/ng-simple-slideshow
+  <slideshow [height]="height"
+            [minHeight]="'525px'"
+            [autoPlay]="true"
+            [showArrows]="false"
+            [imageUrls]="imageSources"
+            [lazyLoad]="imageSources?.length > 1"
+            [autoPlayWaitForLazyLoad]="true">
+  </slideshow>
+    -->
+      <slideshow
+        [imageUrls]="imageUrlArray"
+        [minHeight]="slideShowMinHeight"
+        [autoPlay]="true"
+        [showArrows]="true"
+        [backgroundSize]="'contain'"
+        [showDots]="true"
+        #slideshow></slideshow>
+  </section>
+</div>

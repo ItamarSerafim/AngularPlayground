@@ -7,19 +7,61 @@
 
   <span class="spacer"></span>
 
-  <button mat-icon-button>
-      <i class="material-icons">notifications</i>
-      <span class="badge">3</span>
-  </button>
-  <button mat-icon-button [matMenuTriggerFor]="appMenu">
-    <i class="material-icons">more_vert</i>
-    <mat-menu #appMenu="matMenu">
-      <button mat-menu-item>Settings</button>
-      <button mat-menu-item>Login</button>
-      <button mat-menu-item>Sing in</button>
-      <button mat-menu-item>Help</button>
-    </mat-menu>
-  </button>
+  <div class="header-right-group">
+    <button mat-icon-button>
+        <i class="material-icons">notifications</i>
+        <span class="badge">3</span>
+    </button>
+
+    <button mat-icon-button class="btn-login" routerLink="/login" *ngIf="!sessionService.isLoggedIn">
+      <i class="material-icons lock">lock</i>
+      <i class="material-icons">person</i>
+    </button>
+
+    <button mat-icon-button [matMenuTriggerFor]="appMenu" class="btn-vert">
+      <i class="material-icons">more_vert</i>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item >
+            <div class="flex-row">
+              <i class="material-icons">settings</i>
+              <span>Settings</span>
+            </div>
+        </button>
+        <button mat-menu-item routerLink="/login" *ngIf="!sessionService.isLoggedIn">
+            <div class="flex-row">
+              <span class="composed-icon">
+                <i class="material-icons icon-decorator">lock</i>
+                <i class="material-icons">person</i>
+              </span>
+              <span>Login</span>
+            </div>
+          </button>
+          <button mat-menu-item routerLink="/register" *ngIf="!sessionService.isLoggedIn">
+              <div class="flex-row">
+                <span class="composed-icon">
+                  <i class="material-icons icon-decorator">vpn_key</i>
+                  <i class="material-icons">person</i>
+                </span>
+                <span>Register</span>
+              </div>
+          </button>
+          <button mat-menu-item (click)="sessionService.signout()" *ngIf="sessionService.isLoggedIn">
+              <div class="flex-row">
+                <span class="composed-icon">
+                  <i class="material-icons icon-decorator">vpn_key</i>
+                  <i class="material-icons">person</i>
+                </span>
+                <span>Logout</span>
+              </div>
+          </button>
+        <button mat-menu-item>
+            <div class="flex-row">
+                <i class="material-icons">help</i><span>Help</span>
+            </div>
+          </button>
+      </mat-menu>
+    </button>
+  </div>
 </mat-toolbar>
 
 <mat-sidenav-container class="example-container" autosize>
@@ -39,21 +81,6 @@
 </mat-sidenav>
 
 <mat-sidenav-content class="app-padding main">
-<!--
-<ul class="nav navbar-nav item">
-
-    <li>
-        <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
-    </li>
-    <li>
-        <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
-    </li>
-
-  <li>
-      <a [routerLink]="['/admin']" routerLinkActive="active">Admin</a>
-  </li>
-</ul>
--->
 
   <router-outlet></router-outlet>
 
