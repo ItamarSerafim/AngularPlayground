@@ -1,0 +1,116 @@
+<div class="component-wrap" [ngClass]="{ animateme: animateMe }">
+  <form
+    #userForm="ngForm"
+    class="flex-col register-form"
+  >
+    <h1 class="form-title">Register</h1>
+    <mat-form-field class="input-container">
+      <input
+        matInput
+        placeholder="User name"
+        required
+        [(ngModel)]="user.username"
+        name="username"
+        #username="ngModel"
+        autofocus
+        autocomplete="off"
+        minlength="3"
+        maxlength="35"
+      />
+      <mat-hint align="end" *ngIf="username.dirty">
+        {{ user.username.length }} of 65 characters
+      </mat-hint>
+      <!-- TODO: Fix this mess. Use ctrls or linksForm.get -->
+      <mat-hint align="start" *ngIf="username.dirty && username.errors">
+        <div *ngIf="username.errors.minlength" class="error-msg">
+          At least 3 characters
+        </div>
+        <div *ngIf="username.errors.required" class="error-msg">
+          Title is required
+        </div>
+      </mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="input-container">
+      <input
+        matInput
+        placeholder="Password"
+        required
+        [(ngModel)]="user.password"
+        name="password"
+        #password="ngModel"
+        type="password"
+        autofocus
+        autocomplete="off"
+        minlength="3"
+        maxlength="35"
+      />
+
+      <mat-hint align="start" *ngIf="password.touched">
+        <div
+          *ngIf="password.errors?.minlength && !password.pritine"
+          class="error-msg"
+        >
+          At least 3 characters
+        </div>
+        <p *ngIf="password.errors?.required" class="error-msg">
+          Password is required
+        </p>
+      </mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="input-container">
+      <input
+        matInput
+        placeholder="Email"
+        required
+        [(ngModel)]="user.email"
+        name="email"
+        #email="ngModel"
+        autofocus
+        autocomplete="off"
+        minlength="3"
+        maxlength="35"
+        type="email"
+      />
+      <mat-hint align="end" *ngIf="email.dirty">
+        {{ user.email.length }} of 65 characters
+      </mat-hint>
+      <!-- TODO: Fix this mess. Use ctrls or linksForm.get -->
+      <mat-hint align="start" *ngIf="email.dirty && email.errors">
+        <div *ngIf="email.errors.minlength" class="error-msg">
+          At least 3 characters
+        </div>
+        <div *ngIf="email.errors.required" class="error-msg">
+          Title is required
+        </div>
+      </mat-hint>
+    </mat-form-field>
+
+    <div class="server-msg" *ngIf="registerMessage.success">
+      <p class="error-msg">{{ registerMessage.success }}</p>
+    </div>
+    <div class="server-msg" *ngIf="registerMessage.error">
+      <p class="error-msg">{{ registerMessage.error }}</p>
+    </div>
+    <div class="field-wrap flex-row form-actions">
+      <button
+        mat-raised-button
+        [routerLink]="['/login', { username: user.username }]"
+        type="button"
+      >
+        Login
+      </button>
+      <span class="spacer"></span>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="submit()"
+        class="register-submit"
+        type="button"
+      >
+        Register
+      </button>
+    </div>
+  </form>
+</div>

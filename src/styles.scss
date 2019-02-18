@@ -77,3 +77,17 @@ input[type=number]::-webkit-inner-spin-button {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.material-icons.icon-decorator {
+  font-size: 12px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: -6px;
+}
+
+mat-sidenav-content.main{
+  .animateme {
+    transition: all .3s ease-out;
+    margin-left: 0!important;
+  }
+}

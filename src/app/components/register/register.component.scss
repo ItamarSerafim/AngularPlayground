@@ -1,0 +1,20 @@
+.register-form {
+  .form-title { text-align: center; }
+  max-width: 650px;
+  margin: 15px auto;
+  padding: 1rem;
+  .form-actions {
+    margin: 40px auto;
+    width: 100%;
+    > button {
+      flex: 45%;
+    }
+  }
+}
+.error-msg {
+  color: #f44336;
+}
+.component-wrap {
+  transition: all 1s ease-out;
+  margin-left: 100%;
+}

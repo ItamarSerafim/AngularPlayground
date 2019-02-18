@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
 // import { UserComponent } from './user/user.component';
 // import { DataManagementComponent } from './data-management/data-management.component';
 // import { ApiManagementComponent } from './api-management/api-management.component';
 // import { AuthManagementComponent } from './auth-management/auth-management.component';
 import { ListMenusComponent } from './site-navigation/list-menus/list-menus.component';
-import { CommonModule } from '@angular/common';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { AngularMaterialModule } from '../angular-material.module';

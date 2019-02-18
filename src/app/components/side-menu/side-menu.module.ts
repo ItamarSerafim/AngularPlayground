@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SideMenuComponent, SideMenuItemComponent } from './side-menu.component';
-import { MatListModule, MatIconModule, MatButtonModule, MatInputModule, MatCheckboxModule } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularMaterialModule } from '../../angular-material.module';
+// TODO: are these modules necessary, as all or some are imported by AngularMaterialModule?
+import { MatListModule, MatIconModule, MatButtonModule, MatInputModule, MatCheckboxModule } from '@angular/material';
+
+import { SideMenuComponent, SideMenuItemComponent } from './side-menu.component';
 
 const routes: Routes = [];
 
